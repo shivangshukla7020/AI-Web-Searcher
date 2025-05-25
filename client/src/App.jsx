@@ -107,10 +107,9 @@ function App() {
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </motion.div>
 
-      <div className="flex flex-1 mt-6 gap-6" style={{ position: "relative" }}>
-      {/* Results Area */}
+      <div className="flex flex-1 mt-6 gap-6">
+        {/* Results Area */}
         <div className="flex-1 min-h-[400px] flex items-center justify-center rounded-md p-4">
-          {/* ... your existing results rendering ... */}
           <AnimatePresence mode="wait">
             {loading ? (
               <motion.div
@@ -151,29 +150,18 @@ function App() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
               >
-                <Results results={results} />
+                <Results results={results}/>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        {/* Panel container: fixed width, visibility controlled by opacity & pointer events */}
-        <div
-          style={{
-            width: 250,             // fixed width in px (adjust as needed)
-            transition: "opacity 0.3s ease",
-            opacity: searchTerm.trim() !== '' && filters.length > 0 ? 1 : 0,
-            pointerEvents: searchTerm.trim() !== '' && filters.length > 0 ? 'auto' : 'none',
-            userSelect: searchTerm.trim() !== '' && filters.length > 0 ? 'auto' : 'none',
-          }}
-        >
-          <FilterPanel
-            filters={filters}
-            selectedFilters={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-            isVisible={searchTerm.trim() !== '' && filters.length > 0}
-          />
-        </div>
+        <FilterPanel
+          filters={filters}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+          isVisible={searchTerm.trim() !== '' && filters.length > 0}
+        />
       </div>
     </div>
   );
