@@ -26,7 +26,7 @@ function App() {
     // setResults([]);
 
     try {
-      const response = await fetch("http://localhost:5000/search", {
+      const response = await fetch("https://ai-web-searcher.onrender.com/search", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, filters }),
@@ -49,7 +49,7 @@ function App() {
   // Fetch filters independently if needed (optional)
   const fetchFilters = async (query) => {
     try {
-      const response = await fetch("http://localhost:5000/search/gemini-filters", {
+      const response = await fetch("https://ai-web-searcher.onrender.com/search/gemini-filters", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query }),
