@@ -32,7 +32,7 @@ A React app that provides AI-powered web search with dynamic filters and smooth 
 - AI-powered filtering with GEMINI API
 - Serves top 5 results combined both google and bing searches 
 - Web search powered by SerpAPI  
-- Filter panel to refine results  
+- Dynamic Filter Panel to refine results  
 - Animated transitions with Framer Motion  
 - Loading and error handling states  
 - Modular, reusable components  
