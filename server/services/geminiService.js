@@ -74,10 +74,10 @@ async function getFiltersFromGemini(query) {
   if (!query) throw new Error("Query is required for getting filters.");
 
   const promptText = `
-You are an AI assistant helping to refine search results. Given the user’s search query "${query}", suggest exactly 5 relevant filter categories or tags that could help the user narrow down their search.
+You are an AI assistant helping to refine search results. Given the user’s search query "${query}", suggest exactly 5 specific and relevant filter keywords that match the intent and context of the query. These keywords should be concrete terms or phrases (not broad categories) that can help narrow down the results. Tailor them to the query's subject.
 
 Respond only with a plain JSON array of 5 strings, nothing else. Example:
-["Topic", "Language", "Source", "Date", "Author"]
+["Java", "Beginner", "Spring Boot", "2024", "Online Course"]
 `;
 
   try {
